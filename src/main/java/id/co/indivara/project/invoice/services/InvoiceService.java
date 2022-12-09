@@ -10,9 +10,5 @@ import java.util.List;
 
 public interface InvoiceService {
     Page<Invoice> listOfTransaction();
-
-//    List<Invoice> historyTransaksi(DetachedCriteria dc);
-
-//    List<Invoice> findOrderIdOrderByOrderIdAsc(Long orderId);
-//    List<Invoice> findAllOrderByOrderIdDesc(Invoice invoice, Long orderId);
+    //page dikgunakan untuk menggantikan list digunakan untuk memudahkan implementasi query pada jpa
 }
