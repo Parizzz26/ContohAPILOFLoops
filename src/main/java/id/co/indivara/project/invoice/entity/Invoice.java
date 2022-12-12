@@ -6,7 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -15,9 +18,10 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Valid
+@Table(name = "invoice")
 public class Invoice {
     @Id
-    @OrderBy(value = "{orderId} DESC")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long orderId;
 
@@ -27,8 +31,12 @@ public class Invoice {
     @NotEmpty
     private String company;
 //    private String gambar;
-    @NotEmpty
+
+
     private BigDecimal price;
+
+    @NotEmpty
+    private String user;
 
     private Date createdDate;
 

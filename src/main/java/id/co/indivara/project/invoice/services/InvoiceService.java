@@ -11,4 +11,5 @@ import java.util.List;
 public interface InvoiceService {
     Page<Invoice> listOfTransaction();
     //page dikgunakan untuk menggantikan list digunakan untuk memudahkan implementasi query pada jpa
+    InvoiceResponse saveInvoice(InvoiceRequest request);
 }

@@ -1,6 +1,8 @@
 package id.co.indivara.project.invoice.controller;
 
 import id.co.indivara.project.invoice.entity.Invoice;
+import id.co.indivara.project.invoice.services.InvoiceRequest;
+import id.co.indivara.project.invoice.services.InvoiceResponse;
 import id.co.indivara.project.invoice.services.InvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,5 +22,10 @@ public class InvoiceController {
     public Page<Invoice> history(){
         return invoiceService.listOfTransaction();
     } //page dikgunakan untuk menggantikan list digunakan untuk memudahkan implementasi query pada jpa
+
+    @PostMapping("/invoice")
+    public InvoiceResponse saveInvoice(@RequestBody InvoiceRequest request){
+        return invoiceService.saveInvoice(request);
+    }
 
 }
